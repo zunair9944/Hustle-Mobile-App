@@ -1,0 +1,11 @@
+<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icons/42px/Delete">
+<g id="Delete Icon">
+<path id="Rectangle Copy 5" opacity="0.1" fill-rule="evenodd" clip-rule="evenodd" d="M0 8C0 3.58172 3.58172 0 8 0H34C38.4183 0 42 3.58172 42 8V34C42 38.4183 38.4183 42 34 42H8C3.58172 42 0 38.4183 0 34L0 8Z" fill="#C64B31"/>
+<path id="Stroke 3" fill-rule="evenodd" clip-rule="evenodd" d="M25.2941 28.6381H17.4751C16.5194 28.6381 15.7375 27.8562 15.7375 26.9006V15.6064H27.0317V26.9006C27.0317 27.8562 26.2498 28.6381 25.2941 28.6381Z" stroke="#C64B31" stroke-width="2" stroke-linecap="round"/>
+<path id="Stroke 7" fill-rule="evenodd" clip-rule="evenodd" d="M20.5158 13H22.2534C23.2091 13 23.991 13.7819 23.991 14.7376V15.6063H18.7783V14.7376C18.7783 13.7819 19.5602 13 20.5158 13Z" stroke="#C64B31" stroke-width="2" stroke-linecap="round"/>
+<path id="Stroke 9" d="M21.3846 19.5159V24.7285" stroke="#C64B31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Stroke 11" d="M14 15.6063H28.7692" stroke="#C64B31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

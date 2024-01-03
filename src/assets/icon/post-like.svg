@@ -1,0 +1,18 @@
+<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="akar-icons:thumbs-down">
+<g id="Group">
+<path id="Vector" d="M12.0629 5.78152L12.302 3.41252C12.3966 2.46052 13.3206 1.81452 14.2541 2.04652C15.6584 2.39652 16.6448 3.65152 16.6448 5.09052V8.12552C16.6448 8.80052 16.6448 9.13852 16.7966 9.38552C16.8817 9.52539 17.0004 9.64367 17.1427 9.73052C17.3922 9.88152 17.7321 9.88152 18.4108 9.88152H18.8225C20.5927 9.88152 21.4772 9.88152 22.0219 10.2715C22.4333 10.5682 22.7209 10.9967 22.8327 11.4795C22.9844 12.1295 22.6445 12.9425 21.9637 14.5665L21.6238 15.3765C21.4284 15.8445 21.3483 16.3515 21.3899 16.8565C21.6311 19.7305 19.2622 22.1515 16.3662 21.9915L5.53094 21.3935C4.347 21.3285 3.75555 21.2955 3.22127 20.8405C2.68595 20.3855 2.58513 19.9165 2.38451 18.9795C1.95731 16.9862 1.9768 14.9281 2.44168 12.9425C2.73585 11.6945 3.97488 11.0225 5.25445 11.1825C8.64723 11.6025 11.723 9.16352 12.0629 5.78252V5.78152Z" fill="url(#paint0_linear_138_1445)" stroke="url(#paint1_linear_138_1445)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M7.27623 11.5L7.13383 11.957C6.21183 14.913 6.26068 18.072 7.27623 21" stroke="#FFF7F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_138_1445" x1="-1.80086" y1="11.9991" x2="25.8551" y2="11.9991" gradientUnits="userSpaceOnUse">
+<stop stop-color="#EA3100"/>
+<stop offset="0.857292" stop-color="#FF7753"/>
+</linearGradient>
+<linearGradient id="paint1_linear_138_1445" x1="-1.80086" y1="11.9991" x2="25.8551" y2="11.9991" gradientUnits="userSpaceOnUse">
+<stop stop-color="#EA3100"/>
+<stop offset="0.857292" stop-color="#FF7753"/>
+</linearGradient>
+</defs>
+</svg>

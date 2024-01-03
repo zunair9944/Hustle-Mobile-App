@@ -1,0 +1,215 @@
+.map {
+    // margin-top: -109px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    max-height: 355px;
+    display: flex;
+    justify-content: space-between;
+
+    ion-img {
+        height: 100vh;
+    }
+}
+.refresher{
+    position: absolute;
+}
+ion-content {
+    --background: transparent;
+}
+
+.product-container {
+    flex-wrap: wrap;
+
+    .product {
+        margin-bottom: 30px;
+        width: calc(50% - 10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:nth-child(even) {
+            margin-left: 20px;
+        }
+
+        ion-img {
+            border-radius: 30px;
+            object-fit: cover;
+            object-position: center;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+    }
+}
+
+.customWithIcon {
+    --background: #ffffff;
+    --border-color: #E2E2E2;
+    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.02);
+    backdrop-filter: blur(13.591408729553223px);
+    --border-width: 1px;
+    --border-radius: 40px;
+    --inner-border-width: 0px;
+    --min-height: 39px;
+    --inner-padding-top: 0;
+    --highlight-height: 0px;
+    --placeholder-font-weight: 500;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-bottom: 1px;
+    --inner-padding-bottom: 1px;
+    --inner-padding-end: 0;
+
+    &.ps8 {
+        --padding-start: 8px;
+    }
+
+    ion-input {
+        position: relative;
+        --color: #000000;
+        padding: 0;
+        --placeholder-color: #00000033;
+        --placeholder-opacity: 1;
+        min-height: 34px;
+        font-weight: 500;
+    }
+
+    .pin {
+        width: 8px;
+        border-right: solid 1px #e2e2e2;
+        padding-right: 12px;
+        margin-right: 12px;
+    }
+
+    .drop {
+        width: 16px;
+        border-right: solid 1px #e2e2e2;
+        padding-right: 12px;
+        margin-right: 12px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .arrow {
+        width: 16px;
+        margin: 0;
+    }
+
+    .now {
+        margin: 0;
+        margin-right: 8px;
+    }
+}
+
+.customWithIconTwo {
+    --background: #ffffff;
+    --border-color: #e2e2e2;
+    // --border-width: 1px;
+    --border-radius: 40px;
+    --inner-border-width: 0px;
+    --min-height: 42px;
+    --inner-padding-top: 0;
+    --highlight-height: 0px;
+    --placeholder-font-weight: 500;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-bottom: 1px;
+    --inner-padding-bottom: 1px;
+    --inner-padding-end: 0;
+    border-bottom: solid 1px #e6e6e6;
+
+    &.hideborder {
+        border: 0px;
+    }
+
+    &.ps8 {
+        --padding-start: 8px;
+    }
+
+    ion-input {
+        position: relative;
+        --color: #000000;
+        padding: 0;
+        --placeholder-color: #000000;
+        --placeholder-opacity: 1;
+    }
+
+    .pin {
+        width: 8px;
+        border-right: solid 1px #e2e2e2;
+        padding-right: 12px;
+        margin-right: 12px;
+    }
+
+    .drop {
+        width: 16px;
+        border-right: solid 1px #e2e2e2;
+        padding-right: 12px;
+        margin-right: 12px;
+    }
+
+    .arrow {
+        width: 16px;
+        margin: 0;
+    }
+
+    .now {
+        margin: 0;
+        margin-right: 8px;
+    }
+}
+
+swiper-container {
+    --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #cccccc);
+    --swiper-pagination-color: var(--ion-color-primary, #3880ff);
+    --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+    --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+    --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+    padding-bottom: 20px;
+}
+
+swiper-slide {
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 18px;
+
+    text-align: center;
+    box-sizing: border-box;
+}
+
+swiper-slide img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+.swiper-container {
+    position: relative;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    /* Adjust this value to move the pagination up or down as needed */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+capacitor-google-map {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}

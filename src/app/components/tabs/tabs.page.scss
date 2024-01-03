@@ -1,0 +1,35 @@
+.menu-main {
+    border-radius: 40px 40px 20px 20px;
+    background: #FFF;
+    box-shadow: 0px -10px 40px 0px rgba(0, 0, 0, 0.10);
+    padding: 17px 17px;
+    display: flex;
+    justify-content: space-between;
+
+    ion-tab-button {
+        .white {
+            position: absolute;
+            opacity: 0;
+        }
+        &.tab-selected {
+            border-radius: 12px;
+            background: var(--main-color, #F04E23);
+            box-shadow: 0px 10px 20px 0px rgba(255, 255, 255, 0.3);
+            .grey {
+                position: absolute;
+                opacity: 0;
+            }
+
+            .white {
+                position: inherit;
+                opacity: 1;
+            }
+        }
+    }
+}
+.ion-tabs{
+    background-color: white;
+}
+.menu-main > *{
+    max-width: 56px
+}

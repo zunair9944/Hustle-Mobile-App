@@ -1,0 +1,374 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+// Theme custom scss import
+@import "./theme/normalize.scss";
+@import "./theme/customstyles.scss";
+
+html {
+  // Enables pinch and zoom interactions, but disables others you might find on
+  // some devices, like double-tap to zoom. It is shorthand for the combination
+  // of pan-x pan-y pinch-zoom.
+  touch-action: manipulation;
+  font-family: var(--ion-font-family) !important;
+}
+
+body {
+  margin: 0;
+}
+
+:root {
+  --ion-color-rose: #FFD6CB;
+  --ion-color-rose-rgb: 254, 205, 211;
+  --ion-color-rose-contrast: #F04E23;
+  --ion-color-rose-contrast-rgb: 0, 0, 0;
+  --ion-color-rose-shade: #FFD6CB;
+  --ion-color-rose-tint: #FFD6CB;
+}
+
+.ion-color-rose {
+  --ion-color-base: var(--ion-color-rose);
+  --ion-color-base-rgb: var(--ion-color-rose-rgb);
+  --ion-color-contrast: var(--ion-color-rose-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-rose-contrast-rgb);
+  --ion-color-shade: var(--ion-color-rose-shade);
+  --ion-color-tint: var(--ion-color-rose-tint);
+}
+
+div[slot='content'] {
+  background: white;
+}
+
+div[slot='header'] {
+  background: white;
+  font-size: 16px;
+}
+
+.accoordion-custom {
+  margin-inline: 0px;
+
+  ion-accordion {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06);
+    margin: 26px 0;
+  }
+
+  .ion-accordion-toggle-icon {
+    color: black;
+    font-size: 16px;
+  }
+
+}
+
+.multi-products {
+  padding: 17px 5px;
+
+  .multi-products-accordion {
+    margin-inline: 0px;
+
+    ion-accordion {
+      border-radius: 0px;
+      background: #FFF;
+      box-shadow: none;
+      margin: 0;
+    }
+  }
+}
+
+.arrowdown {
+  width: 24px;
+}
+
+.ion-color-black {
+  background-color: var(--ion-color-black);
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-fill {
+  flex-grow: 1;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+// buttons classes
+// Orange Button
+.btnOrange {
+  min-height: 46px;
+  letter-spacing: 1px;
+  --box-shadow: 0px 10px 20px rgba(253, 187, 78, 0.26);
+  --border-radius: 8px;
+
+  &.noshadow {
+    --box-shadow: 0 0 0 transparent;
+  }
+
+  &.small {
+    min-height: 27px !important;
+    max-height: 27px;
+    --padding-start: 25px;
+    --padding-end: 25px;
+  }
+}
+
+.customInput {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-hover: transparent;
+  --color: #000000;
+  --border-color: transparent;
+  --min-height: 60px;
+  --inner-padding-top: 0;
+  --highlight-height: 0px;
+  --placeholder-color: #b3b3b3 !important;
+  --placeholder-font-weight: 400;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-bottom: 12px;
+  --inner-padding-end: 0;
+  overflow: visible;
+
+  ion-label {
+    position: relative;
+    color: var(--ion-color-primary) !important;
+    font-family: "DIN" !important;
+    font-weight: bold;
+    font-size: 14px !important;
+    font-style: normal;
+    line-height: 16px;
+    text-transform: uppercase;
+    padding-inline: 10px;
+    padding-bottom: 15px;
+  }
+
+  ion-input {
+    border-radius: 10px;
+    border: 1px solid #f6f1f1;
+    background: #fff !important;
+    box-shadow: 0px 4px 10px 2px rgba(224, 224, 224, 0.25);
+    padding: 4.5px 16px !important;
+    --placeholder-color: #b3b3b3 !important;
+    --placeholder-font-weight: 400;
+  }
+
+  input {
+    --padding-bottom: 12px;
+  }
+
+  &.item-has-value {
+    ion-label {
+      color: #666666;
+    }
+  }
+
+  &.item-has-focus {
+    ion-label {
+      color: #666666;
+    }
+  }
+
+  .inouticon {
+    margin-top: 0;
+    margin-right: 8px;
+    position: absolute;
+    right: 8px;
+    bottom: 10px;
+    z-index: 2;
+  }
+}
+
+.custom-input-2 {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-bottom: 12px;
+  --inner-padding-end: 0;
+}
+
+.customSelect {
+  --background: #ffffff;
+  --background-activated: #fff;
+  --background-hover: #fff;
+  --color: #000000;
+  --border-color: #dbdbdb;
+  --min-height: 60px;
+  --inner-padding-top: 0;
+  --highlight-height: 0px;
+  --placeholder-color: #000000 !important;
+  --placeholder-font-weight: 500;
+  --padding-start: 0;
+  --padding-bottom: 12px;
+
+  .inouticon {
+    margin-top: 31px;
+    margin-right: 8px;
+  }
+}
+
+.customSelect::part(icon) {
+  color: #971e49;
+  opacity: 1;
+}
+
+.customSelect::part(text) {
+  color: #545ca7;
+}
+
+.btn-primary {
+  border-radius: 25px;
+  --box-shadow: 0 0 0 transparent;
+  min-height: 44px !important;
+  max-height: 44px;
+  --padding-start: 14px;
+  --padding-end: 14px;
+  background: var(--ion-color-primary);
+  --border: solid 0px #000;
+  color: #fff;
+  text-align: center !important;
+  font-size: 16px !important;
+  font-style: normal;
+  font-weight: 500 !important;
+  text-transform: capitalize;
+
+  &.line {
+    background: transparent;
+    color: var(--ion-color-primary);
+    border: solid 1px var(--ion-color-primary);
+
+    span {
+      color: var(--ion-color-primary);
+    }
+
+  }
+}
+
+.btn-line {
+  border-radius: 25px;
+  --box-shadow: 0 0 0 transparent;
+  min-height: 50px !important;
+  max-height: 50px;
+  width: 100%;
+  --padding-start: 14px;
+  --padding-end: 14px;
+  background: transparent;
+  color: #572c57;
+  border: solid 1px #572c57;
+
+  span {
+    color: #572c57;
+  }
+}
+
+.headTop {
+  padding: 42px 0 0 22px;
+}
+
+.mx215 {
+  max-width: 215px;
+}
+
+.checkbox-label {
+  .checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .custom-checkbox-label {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+// ion-checkbox::part(container) {
+//   border-radius: 2px;
+//   border: 1px solid #ddd;
+//   background: #fff;
+// }
+
+ion-checkbox {
+  --size: 18px;
+  --height: 25px;
+  --width: 25px;
+  --checkmark-color: white;
+  --background-checked: black;
+  --border-color-checked: #f7a58f;
+  --checkbox-background: #fff;
+  --checkbox-background-checked: #f7a58f;
+}
+
+ion-checkbox::part(container) {
+  border-radius: 2px;
+  border: 1px solid #ddd;
+}
+
+.custom-modal-bottom {
+  --background: transparent !important;
+  --height: fit-content;
+  display: flex;
+  align-items: flex-end;
+
+  .modal-container {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    pointer-events: none;
+    padding-top: 20px;
+
+    .modal-inner {
+      pointer-events: all;
+      display: flex;
+      align-self: flex-end;
+      background-color: white;
+      padding: 40px;
+      filter: drop-shadow(0px -14px 20px rgba(0, 0, 0, 0.05));
+      border-radius: 16px 16px 0 0;
+    }
+  }
+}
+
+.swiper-pagination {
+  bottom: 20px !important;
+  bottom: calc(env(safe-area-inset-bottom) + 20px) !important;
+}
+
+.toastbgOrange {
+  --background: #F04E23;
+}
+
+.toastbgRed {
+  --background: #cc0000;
+}

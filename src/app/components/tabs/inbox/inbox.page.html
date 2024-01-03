@@ -1,0 +1,58 @@
+<ion-content fullscreen="true" class="container">
+  <ion-row class="login_top">
+    <ion-col size="12" class="d-flex ion-wrap ion-justify-content-start headTop">
+      <h1 class="font24 fontw700 w-100 ion-text-black ion-text-start mb-0 mt-0 font-din text-primary">Inbox</h1>
+    </ion-col>
+  </ion-row>
+  <div>
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  </div>
+  <!-- uncomment this if card is empty  -->
+  <ion-row class="d-flex ion-wrap ion-justify-content-start headTop" *ngIf="inboxUsers.length === 0 && !loading">
+    <ion-col siz="12" class="mt-10 ion-justify-content-center">
+      <p class="">Your Inbox is empty.</p>
+    </ion-col>
+  </ion-row>
+  <div class="d-flex ion-justify-content-center">
+    <ion-item *ngIf="loading" class="d-flex ion-justify-content-center" lines="none">
+      <ion-spinner name="dots"></ion-spinner>
+    </ion-item>
+  </div>
+  <ion-grid class="ride_center position-relative">
+    <ion-row class="mb-0">
+      <ion-col size="12" class="bottom px-0 d-flex ion-align-items-center mt-30 pb-0">
+        <ion-list class="chatList">
+          <ion-item-sliding class="" *ngFor="let user of inboxUsers"
+            (click)="onClick(user._id,user.firstName,user.lastName,user.profilePic)">
+            <ion-item [routerLink]="['/tabs/chat']">
+              <div class="chatListIn d-flex ion-justify-content-between ion-align-items-center w-100">
+                <div class="d-flex ion-align-items-center">
+                  <ion-img class="user userCircleSm" [src]="user.profilePic"></ion-img>
+                  <div class="ml-12">
+                    <p class="font14 fontw600 text-grey-01 lh17  mb-5">{{user.firstName}} {{user.lastName}}</p>
+                    <p class="font14 fontw400 text-grey-3c lh17  mb-0 d-flex ion-justify-content-start">
+                      <ion-img class="check" src="/assets/icon/two-check-green.svg" *ngIf="user.lastMsg"></ion-img>
+                      {{user.lastMsg}}
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex flex-column ion-align-items-end ion-justify-content-start">
+                  <!-- <p class="font12 fontw400 text-black lh14">3:02 PM</p> -->
+                  <!-- <span class="notification">1</span> -->
+                </div>
+              </div>
+            </ion-item>
+            <ion-item-options side="end">
+              <div class="d-flex flex-column ion-justify-content-between deleteButton h-100 ml-20">
+                <ion-img class="delete" src="/assets/icon/delete-icon-two.svg"></ion-img>
+                <p class="font11 fontw400 text-black lh14 mb-13 ion-text-center">Delete</p>
+              </div>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

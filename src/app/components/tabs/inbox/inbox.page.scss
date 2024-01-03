@@ -1,0 +1,100 @@
+.container {
+  --padding-bottom: 10px;
+  --background: #FFFDFC;
+}
+
+.arrowback {
+  width: 16px;
+  margin-right: -10px;
+}
+
+.userCircle {
+  border-radius: 100px;
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
+ 
+}
+
+// .userAvatar{
+//     width: 44px;
+//     height: 44px;
+// }
+.chatList {
+  background: #FFFDFC;
+  padding: 0px;
+  padding-bottom: 20px;
+  width: 100%;
+
+  ion-item-sliding {
+    background: #FFFDFC;
+
+    ion-item {
+      background: #FFFDFC;
+      --inner-border-width: 0;
+      --border-width: 0;
+      --padding-start: 0px;
+      --inner-padding-end: 0;
+      --inner-padding-start: 0;
+      --padding-end: 0px;
+      --padding-top: 0px;
+      --padding-bottom: 0px;
+
+      .chatListIn {
+        margin-bottom: 13px;
+        padding: 12px;
+        border-radius: 2px;
+        border: 2px solid #fff;
+        background: #fff;
+        box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(13.591408729553223px);
+        margin-left: 17px;
+        margin-right: 17px;
+
+        &:last-child {
+          margin-bottom: 20px;
+        }
+      }
+
+      .avatar {
+        width: 40px;
+      }
+
+      .check {
+        width: 14px;
+        margin-right: 9px;
+      }
+
+      .notification {
+        width: 13.4px;
+        height: 13px;
+        background: #ff5e5c;
+        font-weight: 700;
+        font-size: 8px;
+        line-height: 10px;
+        color: #ffffff;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+.deleteButton {
+  .delete {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.userCircleSm{
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 40px;
+  object-fit: cover;
+  object-position: top center;
+}

@@ -1,0 +1,15 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Arrow" opacity="0.5">
+<rect id="Rectangle 3" width="16" height="16" rx="8" fill="#C0C0C0"/>
+<g id="Up Arrow">
+<g id="Stroke 1">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 7L8 10L11 7Z" fill="white"/>
+<path d="M11 7L8 10" stroke="black" stroke-width="2" stroke-linecap="round"/>
+</g>
+<g id="Stroke 3">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5 7L8 10L5 7Z" fill="white"/>
+<path d="M5 7L8 10" stroke="black" stroke-width="2" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</svg>

@@ -1,0 +1,90 @@
+<!-- <app-header></app-header> -->
+
+<ion-content [fullscreen]="true">
+  <div class="map">
+    <!-- <capacitor-google-map #map></capacitor-google-map> -->
+    <!-- <google-map height="400px" width="750px" [center]="center" [zoom]="zoom" (mapClick)="moveMap($event)"
+      (mapMousemove)="move($event)">
+    </google-map> -->
+    <!-- height="500px" -->
+    <!-- width="100%" -->
+    <!-- <img src="../../../../assets/marker.png" alt=""> -->
+    <google-map [zoom]="zoom" [center]="center" [options]="options">
+      <map-marker *ngFor="let marker of markers" [position]="marker.position">
+      </map-marker></google-map>
+  </div>
+  <div>
+
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  </div>
+  <ion-row>
+    <ion-col size="12" class="px-20 mb-20 mt-10 ion-text-end">
+      <ion-label class="font14 fontw400 text-black">Mile Radius 2.5</ion-label>
+    </ion-col>
+    <ion-col size="12" class="px-20 mb-20">
+      <ion-label class="font22 fontw700 lh26 text-primary font-din">Where do you want to go?</ion-label>
+      <ion-item class="customWithIcon ps8 mt-20">
+        <ion-input color="dark" name="text" type="text" placeholder="Search fro side hustles"></ion-input>
+        <ion-icon src="/assets/icon/drop-off.svg" class="drop" size="small" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item class="customWithIcon mt-12">
+        <ion-input color="dark" name="text" type="text" placeholder="Select a location"></ion-input>
+        <ion-icon src="/assets/icon/pin-red.svg" class="pin" size="small" slot="start"></ion-icon>
+        <ion-icon src="/assets/icon/arrow-down.svg" class="arrow" size="small" slot="end"></ion-icon>
+        <ion-label class="now font14 fontw400">Now</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12" class="mt-10 ion-no-padding" *ngIf="sideHustles.length > 0">
+      <h1 class="font22 fontw700 font-din text-primary ion-text-center">Popular Side Hustles</h1>
+    </ion-col>
+    <ion-col size="12" class="product px-20" *ngIf="sideHustles.length > 0">
+      <div class="d-flex ion-justify-content-center product-container">
+        <div class="product" *ngFor="let hustle of sideHustles" (click)="hustleDescription(hustle.name)">
+          <ion-img class="w-100" [src]="hustle.image"></ion-img>
+          <h2 class="font14 fontw700 font-din text-primary ion-text-center mt-20 mb-0">{{hustle.name}}</h2>
+        </div>
+      </div>
+    </ion-col>
+    <div class="d-flex ion-justify-content-center w-100">
+      <ion-item *ngIf="loading" class="d-flex ion-justify-content-center" lines="none">
+        <ion-spinner name="dots"></ion-spinner>
+      </ion-item>
+    </div>
+  </ion-row>
+  <ion-row *ngIf="sideHustles.length > 0">
+    <ion-col size="12" class="product px-20 mb-50">
+      <div class="d-flex w-100 ion-align-items-center
+        ion-justify-content-center pt-20">
+        <ion-button color="light" fill="clear"
+          class="btn-primary ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center w-100"
+          (click)="onSeeMore()" *ngIf="seeMore">
+          <span>See more</span>
+        </ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12" class=" ion-no-padding">
+      <h1 class="font22 fontw700 font-din text-primary ion-text-center">LOREM IPSUM (HEADING)</h1>
+    </ion-col>
+    <ion-col size="12" class="ion-text-center px-20">
+      <swiper-container>
+        <swiper-slide><img src="/assets/i/slide1.jpg" class="w-100" alt="Slide 1" /> </swiper-slide>
+        <swiper-slide><img src="/assets/i/slide1.jpg" class="w-100" alt="Slide 1" /> </swiper-slide>
+        <swiper-slide><img src="/assets/i/slide1.jpg" class="w-100" alt="Slide 1" /> </swiper-slide>
+      </swiper-container>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12" class="mt-50">
+      <h1 class="font22 fontw700 font-din text-primary ion-text-center">BOOK OUR CALENDAR</h1>
+    </ion-col>
+    <ion-col size="12" class="ion-text-center px-20 mb-50">
+      <img src="/assets/i/calender-no-access.svg" class="w-100" alt="calender-no-access" />
+    </ion-col>
+  </ion-row>
+  <div>
+  </div>
+</ion-content>

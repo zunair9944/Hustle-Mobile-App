@@ -1,0 +1,71 @@
+<ion-header class="chatHeader ion-no-border">
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="8" class="left ion-no-padding d-flex ion-justify-content-start ion-align-items-center">
+        <ion-back-button defaultHref="/tabs/inbox">
+          <ion-img class="arrow-left" src="/assets/icon/arrow-left.svg"></ion-img>
+        </ion-back-button>
+        <ion-avatar class="user userAvatar">
+          <ion-img class="" [src]="user?.profilePic"></ion-img>
+        </ion-avatar>
+        <div style="margin-left: 2%;">
+          <h4 class="font15 fontw500 lh18 text-grey-01 m-0">{{user?.firstName}} {{user?.lastName}}</h4>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="container" [scrollEvents]="true">
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)" position="top" style="visibility: hidden;">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <div class="d-flex ion-justify-content-center" style="margin-top: -15%;">
+      <ion-item *ngIf="loading" class="d-flex ion-justify-content-center" lines="none">
+        <ion-spinner name="dots"></ion-spinner>
+      </ion-item>
+    </div>
+  <ion-grid fixed class="ion-no-padding msg-content" scrollDownOnLoad="true">
+    <ion-row *ngFor="let message of messages" scrollDownOnLoad="true">
+      <ion-col size="12" class="mt-30 send" *ngIf="message.isSender">
+        <div class="chatContainer">
+          <div class="time">
+            <span>{{message.createdAt}}</span>
+          </div>
+          <div class="chatBoxUp">
+            <div class="chatBox">
+              <span>{{message.content}}</span>
+            </div>
+            <ion-img class="tick" src="/assets/icon/chat-tick.svg"></ion-img>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="received mt-30" *ngIf="!message.isSender">
+        <div class="chatContainer">
+          <div class="time">
+            <span>{{message.createdAt}}</span>
+          </div>
+          <div class="chatBoxUp">
+            <div class="chatBox">
+              <span>{{message.content}}</span>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+  <ion-footer class="ion-no-border">
+    <form [formGroup]="chatForm" (ngSubmit)="onSend()">
+      <ion-toolbar>
+        <div class="containerFooter d-flex ion-justify-content-between">
+          <div class="inputChat">
+            <ion-input color="dark" placeholder="Type a message here" formControlName="message"></ion-input>
+            <button type="submit">
+              <ion-img class="send-icon" src="/assets/icon/send-message.svg"></ion-img>
+            </button>
+          </div>
+        </div>
+      </ion-toolbar>
+    </form>
+  </ion-footer>

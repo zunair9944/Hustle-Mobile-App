@@ -1,0 +1,38 @@
+<div class="modal-container">
+  <div class="modal-inner">
+    <form [formGroup]="parentConfirmationForm" (ngSubmit)="onSave()">
+      <ion-row>
+        <ion-col size="12">
+          <h1 class="font-din font16 fontw700 text-center mt-0">Update information of <br /> your guardian</h1>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item class="custom-input-2">
+            <ion-input label="Guardian Email" labelPlacement="floating" placeholder="Enter Email Address"
+              [ngClass]="{'errorBorder':parentConfirmationForm.get('guardianEmail')?.hasError('required') && parentConfirmationForm.get('guardianEmail')?.touched || parentConfirmationForm.get('guardianEmail')?.hasError('pattern')}"
+              formControlName="guardianEmail"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item class="custom-input-2">
+            <ion-input label="Guardian Phone No." labelPlacement="floating" placeholder="Enter Phone"
+              [ngClass]="{'errorBorder':parentConfirmationForm.get('guardianPhone')?.hasError('required') && parentConfirmationForm.get('guardianPhone')?.touched || parentConfirmationForm.get('guardianPhone')?.hasError('pattern')}"
+              formControlName="guardianPhone"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <div class="d-flex w-100 ion-align-items-center
+        ion-justify-content-center pt-40">
+            <ion-button type="submit" color="light" fill="clear"
+              class="btn-primary ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center w-100">
+              <span>Save</span>
+            </ion-button>
+            <ion-button (click)="closeModal()" color="light" fill="clear"
+              class="btn-primary line ml-20 ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center w-100">
+              <span>Cancel</span>
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<ion-content color="transparent" class="ion-padding-bottom modal-container comment-section">
+    <ion-row class="px-22">
+        <ion-col size="6" class="ion-no-padding">
+            <h1 class="font24 fontw700 w-100 ion-text-black font-din text-primary">Comments</h1>
+        </ion-col>
+    </ion-row>
+    <div *ngFor="let comment of comments">
+        <ion-card class="card post-card ion-margin-bottom ion-margin-top" *ngFor="let cm of comment.comments">
+            <ion-card-header>
+                <div class="d-flex">
+                    <div class=" wrapper-com">
+                        <div class="dp-image">
+                            <ion-avatar style="width: 40px;height: 40px;">
+                                <ion-img [src]="comment.profilePic" style="width: 100%;">
+                                </ion-img>
+                            </ion-avatar>
+                        </div>
+                        <div class="user-details">
+                            <ion-card-title class="text-primary font-10 fontw500 name-com">{{comment.firstName}}
+                                {{comment.lastName}}</ion-card-title>
+                            <ion-card-subtitle class="text-grey-05 font-14 fontw400">{{cm.comments}}</ion-card-subtitle>
+                        </div>
+                    </div>
+                </div>
+            </ion-card-header>
+        </ion-card>
+    </div>
+    <div class="d-flex ion-justify-content-center">
+        <ion-item *ngIf="loading" class="d-flex ion-justify-content-center" lines="none">
+            <ion-spinner name="dots"></ion-spinner>
+        </ion-item>
+    </div>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+<ion-footer>
+    <ion-item>
+        <div class="inputChat">
+            <form [formGroup]="commentForm" (ngSubmit)="onComment()" class="d-flex ion-justify-content-between">
+                <ion-input color="dark" placeholder="Comment" formControlName="comment"></ion-input>
+                <button type="submit">
+                    <ion-img class="send-icon" src="/assets/icon/send-message.svg"></ion-img>
+                </button>
+            </form>
+        </div>
+    </ion-item>
+</ion-footer>

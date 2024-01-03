@@ -1,0 +1,40 @@
+<ion-content fullscreen="true" class="container">
+  <ion-row class="px-22">
+    <ion-col size="6" class="ion-no-padding">
+      <h1 class="font24 fontw700 w-100 ion-text-black ion-text-start font-din text-primary">My Profile</h1>
+    </ion-col>
+    <ion-col size="6" class="ion-no-padding d-flex ion-justify-content-end">
+      <ion-img class="edit-pen" src="/assets/icon/edit-pen.svg" (click)="editProfile()"></ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-grid class="ride_center position-relative">
+    <ion-row class="mb-0">
+      <ion-col size="12"
+        class="bottom px-0 d-flex flex-column ion-align-items-center ion-justify-content-center ion-text-center mt-30 pb-0">
+        <ion-avatar class="user userAvatar">
+          <ion-img class="" [src]="user.profilePic"></ion-img>
+        </ion-avatar>
+        <h2 class="font20 fontw500 text-black-05 mt-10 mb-10">{{user.firstName}} {{user.lastName}}</h2>
+        <ion-img class="stars" src="/assets/icon/starts.svg"></ion-img>
+        <h2 class="font10 fontw500 text-black-05 mt-10 mb-10">{{user.reviews}} reviews</h2>
+      </ion-col>
+      <ion-col size="12" class="px-22 mt-30 pb-0">
+        <div class="list-link d-flex ion-justify-content-between w-100" routerLink="my-posts">
+          <h3 class="font16 fontw600 text-primary mb-0 mt-0">My Post</h3>
+          <ion-img class="" src="/assets/icon/arrow-right.svg"></ion-img>
+        </div>
+        <div class="list-link d-flex ion-justify-content-between w-100">
+          <h3 class="font16 fontw600 text-primary mb-0 mt-0">Jobs Completed</h3>
+          <ion-img class="" src="/assets/icon/arrow-right.svg"></ion-img>
+        </div>
+        <div class="list-link d-flex ion-justify-content-between w-100">
+          <h3 class="font16 fontw600 text-primary mb-0 mt-0">Settings</h3>
+          <ion-img class="" src="/assets/icon/arrow-right.svg"></ion-img>
+        </div>
+        <ion-button color="transparent" class="logout-btn text-primary" (click)="onLogout()"><ion-icon
+            name="log-out"></ion-icon>
+          <span class="ml-3">Logout</span></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

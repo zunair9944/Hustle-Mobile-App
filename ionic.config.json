@@ -1,0 +1,7 @@
+{
+  "name": "Hustle_CaseJohnson",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

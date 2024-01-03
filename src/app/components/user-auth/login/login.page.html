@@ -1,0 +1,42 @@
+<ion-content fullscreen="true" class="container">
+  <ion-row class="login_top">
+    <ion-col size="12" class="d-flex ion-wrap ion-justify-content-center">
+      <ion-img class="profilePicture mx-auto mt-30" src="/assets/i/logo.svg"></ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-grid class="login_center position-relative">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <ion-row>
+        <ion-col size="12" class="px-0 w-100 pt-20">
+          <ion-item class="customInput" lines="none">
+            <ion-label position="stacked" class="mt-0">Account name</ion-label>
+            <ion-input placeholder="Account name" formControlName="accountName"></ion-input>
+          </ion-item>
+          <ion-item class="customInput" lines="none">
+            <ion-label position="stacked" class="mt-0">Password</ion-label>
+            <ion-input  #passwordInput [type]="passwordVisible ? 'text' : 'password'"  placeholder="Enter Password" formControlName="password"></ion-input>
+            <ion-icon src="/assets/icon/lock.svg" class="inouticon" size="small" slot="end"  (click)="passwordInput.type = passwordVisible ? 'text' : 'password'; passwordVisible = !passwordVisible;"></ion-icon>
+          </ion-item>
+          <div class="d-flex w-100 ion-align-items-center ion-justify-content-start">
+            <ion-button fill="clear"
+              class="ion-float-start text-underline ion-no-margin ion-no-padding text-primary fontw400 font14">
+              <span class="text-capitalize text-underline">Forgot Your Password?</span>
+            </ion-button>
+          </div>
+          <div class="d-flex w-100 ion-align-items-center
+      ion-justify-content-center pt-50">
+            <ion-button type="submit" color="light" fill="clear"
+              class="btn-primary ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center w-100">
+              <span>Sign In</span>
+            </ion-button>
+          </div>
+          <div class="d-flex w-100 ion-align-items-center
+      ion-justify-content-center pt-50">
+            <p class="text-grey-light">New to Hustle? <span class="fontw700 text-primary"
+                [routerLink]="['/user-auth/signup']">Sign Up</span></p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

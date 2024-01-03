@@ -1,0 +1,103 @@
+<ion-content [fullscreen]="true">
+  <ion-content class="post-container">
+    <ion-row class="px-22">
+      <ion-col size="6" class="ion-no-padding">
+        <h1 class="font24 fontw700 w-100 ion-text-black font-din text-primary">News Feed</h1>
+      </ion-col>
+    </ion-row>
+    <div>
+      <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+    </div>
+    <ion-card class="post-card">
+      <ion-card-header>
+        <div class="d-flex">
+          <ion-avatar class="user userAvatar">
+            <ion-img class="" [src]="user.profilePic"></ion-img>
+          </ion-avatar>
+          <div class="pl-10">
+            <ion-card-title class="text-primary font-16 fontw500">{{user.firstName}} {{user.lastName}}</ion-card-title>
+            <ion-card-subtitle class="text-grey-05 font-14 fontw400">Create a post</ion-card-subtitle>
+          </div>
+        </div>
+      </ion-card-header>
+      <form [formGroup]="postForm" (ngSubmit)="onPost()">
+        <div class="card-body">
+          <ion-card-content>
+            <ion-textarea placeholder="Write something..." rows="5" class="text-area"
+              formControlName="caption"></ion-textarea>
+          </ion-card-content>
+          <div class="uploadedImgDiv" *ngIf="postImage">
+            <ion-img class="uploadedImg" [src]="postImage"></ion-img>
+          </div>
+          <div class="card-footer d-flex ion-justify-content-between">
+            <ion-buttons slot="start">
+              <ion-button fill="clear" (click)="takePhoto()">
+                <ion-img class="" src="/assets/icon/post-camera.svg"></ion-img>
+              </ion-button>
+              <ion-button fill="clear">
+                <ion-img class="" src="/assets/icon/post-play.svg"></ion-img>
+              </ion-button>
+              <ion-button fill="clear">
+                <ion-img class="" src="/assets/icon/post-attachment.svg"></ion-img>
+              </ion-button>
+            </ion-buttons>
+            <ion-button type="submit" class="action-button" expand="block">Post</ion-button>
+          </div>
+        </div>
+      </form>
+    </ion-card>
+    <ion-card class="post-card" *ngFor="let post of posts">
+      <ion-card-header>
+        <div class="d-flex">
+          <ion-avatar class="user userAvatar">
+            <ion-img class="" [src]="post.userProfilePic"></ion-img>
+          </ion-avatar>
+          <div class="pl-10">
+            <ion-card-title class="text-primary font-16 fontw500">{{post.firstName}} {{post.lastName}}</ion-card-title>
+            <ion-card-subtitle class="text-grey-05 font-14 fontw400">{{post.createDate}} 
+              {{post.createTime}}</ion-card-subtitle>
+          </div>
+        </div>
+      </ion-card-header>
+      <div class="card-body">
+        <ion-card-content>
+          <p class="font-16 fontw400 text-black-05 p-12 m-0">{{post.caption}}</p>
+          <ion-img *ngIf="post.postImage" class="w-100" [src]="post.postImage"></ion-img>
+        </ion-card-content>
+        <div class="card-footer d-flex">
+          <ion-buttons slot="start">
+            <ion-button fill="clear" (click)="onLike(post._id)">
+              <ion-img class="postLiked"
+                [src]="post.postLiked? '/assets/icon/post-like.svg': '/assets/icon/post-liked.svg'"></ion-img>
+              <span class="font-14 fontw600 text-black-05 pl-8">{{post.likes}}</span>
+            </ion-button>
+            <ion-button fill="clear" class="pl-30" (click)="onComment(post._id)">
+              <ion-img class="" src="/assets/icon/post-chat.svg"></ion-img>
+              <span class="font-14 fontw600 text-black-05 pl-8">{{post.comments}}</span>
+            </ion-button>
+          </ion-buttons>
+        </div>
+      </div>
+    </ion-card>
+    <ion-card class="post-card" *ngIf="loading">
+      <div class="card-body">
+        <ion-card-header class="ion-no-margin ion-no-padding">
+          <ion-card-content class="ion-margin-top">
+            <ion-skeleton-text [animated]="true" style="width: 100%"></ion-skeleton-text>
+          </ion-card-content>
+        </ion-card-header>
+        <ion-card-content class="ion-margin-top">
+          <ion-skeleton-text [animated]="true" style="width: 100%"></ion-skeleton-text>
+        </ion-card-content>
+        <ion-card-content class="ion-margin-top">
+          <ion-skeleton-text [animated]="true" style="width: 100%"></ion-skeleton-text>
+        </ion-card-content>
+      </div>
+    </ion-card>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-content>

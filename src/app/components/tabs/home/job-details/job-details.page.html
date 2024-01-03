@@ -1,0 +1,156 @@
+<ion-content fullscreen="true" class="container">
+  <ion-row class="login_top px-20 mt-20">
+    <ion-col size="6" class="ion-no-padding">
+      <ion-button fill="clear" class="ion-no-padding m-0" routerLink="/tabs/home">
+        <ion-icon src="/assets/icon/back.svg" class="arrowdown m-0" size="" slot="start"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6" class="ion-no-padding d-flex ion-justify-content-end">
+      <ion-img class="share" src="/assets/icon/share.svg"></ion-img>
+    </ion-col>
+  </ion-row>
+
+
+
+  <ion-grid class="ride_center position-relative px-20">
+    <ion-row class="mb-0">
+      <ion-col size="12" class="mb-30 px-0">
+        <ion-img class="w-100" src="/assets/i/feed-view.jpg"></ion-img>
+      </ion-col>
+
+      <ion-col size="12" class="mt-30">
+        <h3 class="font18 fontw700 text-primary mb-0 mt-0 ion-text-uppercase">{{name}}</h3>
+        <p class="font14 fontw400 text-grey mb-0 mt-10 lh22">Pressure washing or power washing is the use of
+          high-pressure water spray to remove loose paint, mold, grime, dust, mud, and dirt from surfaces and objects
+          such as buildings, vehicles and concrete surfaces</p>
+      </ion-col>
+
+      <ion-col size="12" class="mt-0">
+        <div class="d-flex ion-justify-content-between ion-align-items-center w-100">
+          <h4 class="font16 fontw500 text-grey-dark mb-0 mt-0 lh22">Activities</h4>
+          <div class="rating d-flex ion-justify-content-center ion-align-items-center ml-12">
+            <ion-img class="w9" src="/assets/icon/star.svg"></ion-img>
+            <span class="font10 fontw400 text-black">5.0</span>
+          </div>
+          <div class="comment ml-20">
+            <p class="font10 fontw400 text-black">We suggest you choose a price that seems fair based on your experience
+              and size of the job.</p>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="mt-0">
+        <ion-accordion-group expand="inset" [value]="['first']" class="accoordion-custom">
+          <ion-accordion value="first">
+            <ion-item slot="header" color="rose">
+              <ion-label class="font-16 fontw500">Job Details</ion-label>
+            </ion-item>
+            <div class="p-0 pb-20" slot="content">
+              <div class="px-14 pt-12">
+                <div class="d-flex ion-justify-content-between ion-align-items-center">
+                  <div>
+                    <h4 class="text-black-05 font14 fontw400 mt-0 mb-0">Average Pay:</h4>
+                  </div>
+                  <ion-img class="w16" src="/assets/icon/info-red.svg"></ion-img>
+                </div>
+                <div class="d-flex ion-justify-content-between ion-align-items-center mt-15">
+                  <div>
+                    <h4 class="text-black-05 font12 fontw500 mt-0 mb-0">Pros charge:</h4>
+                  </div>
+                  <h5 class="text-primary font12 fontw600 mt-0 mb-0">$25 - $100/h</h5>
+                </div>
+                <div class="d-flex ion-justify-content-between ion-align-items-center mt-10">
+                  <div>
+                    <h4 class="text-black-05 font12 fontw500 mt-0 mb-0">Amateur charge: </h4>
+                  </div>
+                  <h5 class="text-primary font12 fontw600 mt-0 mb-0">$15 - $45/h</h5>
+                </div>
+              </div>
+              <hr class="line" />
+              <div class="px-14 ">
+                <h4 class="text-black-05 font14 fontw400 mt-0 mb-0">Time:</h4>
+                <p class="text-grey-66  font10 fontw400 mt-10 mb-0">This side hustle generally takes
+                  <span class="text-primary fontw700 mt-10 mb-0">1-3 hours </span>depending on the size of the job.
+                </p>
+              </div>
+            </div>
+          </ion-accordion>
+          <ion-accordion value="second">
+            <ion-item slot="header" color="rose">
+              <ion-label class="font-16 fontw500">Materials used</ion-label>
+            </ion-item>
+            <div class="product-container" slot="content">
+              <div class="d-flex ion-justify-content-center ion-align-items-center ion-text-center">
+                <div class="singple-product">
+                  <div class="product-img">
+                    <ion-img class="w-100" src="/assets/i/product1.png"></ion-img>
+                  </div>
+                  <h3 class="text-primary font14 fontw700 lh17 mt-18 mb-0 ion-text-uppercase">Sun Joe SPX3000 2030</h3>
+                </div>
+                <div class="singple-product">
+                  <div class="product-img">
+                    <ion-img class="w-100" src="/assets/i/product2.png"></ion-img>
+                  </div>
+                  <h3 class="text-primary font14 fontw700 lh17 mt-18 mb-0 ion-text-uppercase">Simple Green Oxy</h3>
+                </div>
+              </div>
+            </div>
+          </ion-accordion>
+          <ion-accordion value="third">
+            <ion-item slot="header" color="rose">
+              <ion-label class="font-16 fontw500">Adverising</ion-label>
+            </ion-item>
+            <div class="multi-products" slot="content">
+              <ion-accordion-group [animated]="false" class="multi-products-accordion" [value]="['first-tab']">
+                <ion-accordion value="first-tab">
+                  <ion-item slot="header" color="white">
+                    <ion-label class="text-black-05 font14 fontw600 mt-0 mb-0">Flyer Templates</ion-label>
+                  </ion-item>
+                  <div class="p-0" slot="content">
+                    <div
+                      class="multi-product-box px-15 d-flex ion-justify-content-center ion-align-items-center ion-text-center">
+                      <div class="multi-product">
+                        <ion-img class="w-100" src="/assets/i/product-img.jpg"></ion-img>
+                      </div>
+                      <div class="multi-product">
+                        <ion-img class="w-100" src="/assets/i/product-img.jpg"></ion-img>
+                      </div>
+                    </div>
+                  </div>
+                </ion-accordion>
+                <ion-accordion value="second-tab">
+                  <ion-item slot="header" color="white">
+                    <ion-label class="text-black-05 font14 fontw600 mt-0 mb-0"><ion-label
+                        class="text-black-05 font14 fontw600 mt-0 mb-0">Flyer Templates</ion-label></ion-label>
+                  </ion-item>
+                  <div class="p-0" slot="content">
+                    <div
+                      class="multi-product-box px-15 d-flex ion-justify-content-center ion-align-items-center ion-text-center">
+                      <div class="multi-product">
+                        <ion-img class="w-100" src="/assets/i/product-img.jpg"></ion-img>
+                      </div>
+                      <div class="multi-product">
+                        <ion-img class="w-100" src="/assets/i/product-img.jpg"></ion-img>
+                      </div>
+                    </div>
+                    <div
+                      class="multi-product-box px-15 d-flex ion-justify-content-center ion-align-items-center ion-text-center">
+                      <div class="multi-product">
+                        <ion-img class="w-100" src="/assets/i/product-img.jpg"></ion-img>
+                      </div>
+                      <div class="multi-product">
+                        <ion-img class="w-100" src="/assets/i/product-img.jpg"></ion-img>
+                      </div>
+                    </div>
+                  </div>
+                </ion-accordion>
+
+              </ion-accordion-group>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
